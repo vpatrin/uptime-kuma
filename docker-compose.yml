@@ -6,11 +6,12 @@ services:
     volumes:
       - uptime-kuma-data:/app/data
     networks:
-      - web
+      - internal
 
 volumes:
   uptime-kuma-data:
 
 networks:
-  web:
+  internal:
+    # Docker Compose expects the network to already exist - won't create or delete it after docker compose up/down
     external: true
